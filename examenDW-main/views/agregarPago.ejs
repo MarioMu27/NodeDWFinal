@@ -1,0 +1,36 @@
+<% if(datos != '') { %>
+  <% datos.forEach(function(estudiante, index) { %>
+    <div class="card mb-3">
+      <div class="card-body">
+        <h2 class="card-title">Estudiante: <%- estudiante.nombres %> <%- estudiante.apellidos %></h2>
+        <p class="card-text">Grado: <%- estudiante.grado %></p>
+        <p class="card-text">Mensualidad: <%- estudiante.cuota %></p>
+      </div>
+    </div>
+  <% }) %>
+<% } %>
+
+<div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 mb-4">
+  <div class="row">
+    <div class="col-8">
+      <label for="name" class="form-label">Total de meses a pagar</label>
+      <input type="number" name="name" id="name" class="form-control" required>
+    </div>
+    <div class="col-4">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          Tipo de pago
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="#">Efectivo</a></li>
+          <li><a class="dropdown-item" href="#">Depósito</a></li>
+          <li><a class="dropdown-item" href="#">Transferencia</a></li>
+          <li><a class="dropdown-item" href="#">Tarjeta</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-12 mt-3">
+      <a href="/AgregarPago" class="btn btn-primary">Nuevo</a>
+    </div>
+  </div>
+</div>

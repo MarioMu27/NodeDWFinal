@@ -1,0 +1,26 @@
+<h2 class="pb-4">Pagos del Estudiante</h2>
+
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Carnet</th>
+        <th>Monto Pagado</th>
+        <th>No. de Meses Pagados</th>
+        <th>Tipo de Pago</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if(pagos != '') { %>
+        <% pagos.forEach(function(pago, index) { %>
+          <tr>
+            <td><%- pago.estudiantecarnet %></td>
+            <td><%- pago.total %></td>
+            <td><%- pago.meses %></td>
+            <td><%- pago.tipo %></td>
+          </tr>
+        <% }) %>
+      <% } %>
+    </tbody>
+  </table>
+</div>
